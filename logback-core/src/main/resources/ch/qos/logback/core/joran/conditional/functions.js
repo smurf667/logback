@@ -7,10 +7,9 @@ var property = function(key) {
 var p = property;
 
 var isDefined = function(key) {
-    var val = OptionHelper.propertyLookup(key, props, ctx);
-    return val ? true : false;
+    return !(p(key) == "");
 };
 
 var isNull = function(key) {
-    return !isDefined(key);
+    return p(key) == "";
 };
